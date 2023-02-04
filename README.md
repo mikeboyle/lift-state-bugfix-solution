@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# Lifting state up: Fix the bugs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## TEAM MEMBERS
+List your team members here
+```
+1.
+2.
+3.
+...
+```
 
-## Available Scripts
+## GETTING STARTED AND SUBMITTING
+1. Fork and clone this repo
+1. run `npm install` to install, then `npm start` to start.
+1. When you have finished **all** of steps 1-4, submit by making a PR on the original repo.
+1. If you do not finish all the steps before time runs out, submit what you have as a PR.
 
-In the project directory, you can run:
+## USER STORIES
+1. When I vist the home page, I see a list of menu items and my current order.
+1. Each menu item has a name, short description, formatted price, and list of toppings (if the item has toppings)
+1. When I type in the search bar, the list of items is filtered and I only see items whose name contains the text in the search bar.
+1. When I click "Add to Order" the item is added to the order with quantity 1. If it is already in the order, its quantity increments. When I click "Remove", the quantity decreases. When the quantity reaches 0, the item disappears from the order.
 
-### `npm start`
+## STEP 1: FIND THE BUGS
+1. For each of the user stories, check whether it works.
+1. If a user story is broken, document the bug. Write the steps to reproduce it and the actual vs. expected results.
+1. Add your bug descriptions here in the README.md. There may be more than 2 bugs (or fewer!).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### BUG 1
+```
+// type your answer here
+Steps to reproduce:
+1.
+2.
+...
+**Expected result**:
+**Actual result**:
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### BUG 2
+```
+// type your answer here
+Steps to reproduce:
+1.
+2.
+...
+**Expected result**:
+**Actual result**:
+```
 
-### `npm test`
+## STEP 2: PLAN 
+How will you fix each bug? In your group, make a plan. Write down the key steps.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Hint**: You will need to lift state up to fix these bugs! Think about how you will lift state up. What states will you move? What common parents will own them?
 
-### `npm run build`
+### BUG 1
+```
+Key steps to fix the bug
+1.
+2.
+...
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### BUG 2
+```
+Key steps to fix the bug
+1.
+2.
+...
+```
+## STEP 3: FIX THE BUGS
+Fix the bugs! Implement the plans you wrote above.
+If you realize the plan needs to change, updat
+Make a separate commit for each bug fix.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
