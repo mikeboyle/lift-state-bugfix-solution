@@ -1,0 +1,5 @@
+.Items {
+    height: calc(100% - 3rem);
+    overflow-y: scroll;
+    padding: 0 0.5rem;
+}
