@@ -70,6 +70,6 @@ Key steps to fix the bug
 ```
 ## STEP 3: FIX THE BUGS
 Fix the bugs! Implement the plans you wrote above.
-If you realize the plan needs to change, updat
-Make a separate commit for each bug fix.
+If you realize the plan needs to change, update it.
+Make a separate commit for each bug fix or group of related fixes.
 
