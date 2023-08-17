@@ -7,16 +7,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [items, setItems] = useState([]);
-  const [query, setQuery] = useState('');
   const [order, setOrder] = useState({});
-
-  const handleSearchChange = (e) => {
-    setQuery(e.target.value);
-  };
-
-  const filteredItems = items.filter((item) => {
-    return item.name.toLowerCase().includes(query.toLowerCase());
-  });
 
   const handleAddToOrder = (id) => {
     const updatedOrder = addToOrder(order, id);
@@ -53,12 +44,7 @@ function App() {
     <div className="App">
       <h1>Our Menu</h1>
       <Grid className="App__menu-grid">
-        <Menu
-          handleAddToOrder={handleAddToOrder}
-          handleSearchChange={handleSearchChange}
-          items={filteredItems}
-          query={query}
-        />
+        <Menu handleAddToOrder={handleAddToOrder} items={items} />
         <Order
           orderItems={orderItems}
           handleRemoveFromOrder={handleRemoveFromOrder}
