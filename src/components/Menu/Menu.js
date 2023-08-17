@@ -2,11 +2,11 @@ import Items from '../Items/Items';
 import SearchBar from '../SearchBar/SearchBar';
 import './Menu.css';
 
-const Menu = ({ filteredItems, handleAddToOrder, items, setFilteredItems }) => {
+const Menu = ({ handleAddToOrder, handleSearchChange, items, query }) => {
   return (
     <div className="Menu">
-      <SearchBar items={items} setFilteredItems={setFilteredItems} />
-      <Items handleAddToOrder={handleAddToOrder} items={filteredItems} />
+      <SearchBar value={query} onChange={handleSearchChange} />
+      <Items handleAddToOrder={handleAddToOrder} items={items} />
     </div>
   );
 };

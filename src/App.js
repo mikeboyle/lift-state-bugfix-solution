@@ -7,8 +7,16 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [items, setItems] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
+  const [query, setQuery] = useState('');
   const [order, setOrder] = useState({});
+
+  const handleSearchChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  const filteredItems = items.filter((item) => {
+    return item.name.toLowerCase().includes(query.toLowerCase());
+  });
 
   const handleAddToOrder = (id) => {
     const updatedOrder = addToOrder(order, id);
@@ -36,7 +44,6 @@ function App() {
     const json = await res.json();
     const { data } = json;
     setItems(data);
-    setFilteredItems(data);
   };
   useEffect(() => {
     fetchData();
@@ -47,10 +54,10 @@ function App() {
       <h1>Our Menu</h1>
       <Grid className="App__menu-grid">
         <Menu
-          filteredItems={filteredItems}
           handleAddToOrder={handleAddToOrder}
-          items={items}
-          setFilteredItems={setFilteredItems}
+          handleSearchChange={handleSearchChange}
+          items={filteredItems}
+          query={query}
         />
         <Order
           orderItems={orderItems}
