@@ -16,6 +16,7 @@ List your team members here
 1. If you do not finish all the steps before time runs out, submit what you have as a PR.
 
 ## USER STORIES
+You can refer to the [deployed and fixed version of this site](https://lift-state-bugfix.netlify.app/) to see how each of these user stories behaves when they are working correctly.
 1. When I vist the home page, I see a list of menu items and my current order.
 1. Each menu item has a name, short description, formatted price, and list of toppings (if the item has toppings)
 1. When I type in the search bar, the list of items is filtered and I only see items whose name contains the text in the search bar.
