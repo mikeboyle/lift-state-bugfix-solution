@@ -52,7 +52,9 @@ Steps to reproduce:
 ## STEP 2: PLAN 
 How will you fix each bug? In your group, make a plan. Write down the key steps.
 
-**Hint**: You will need to lift state up to fix these bugs! Think about how you will lift state up. What states will you move? What common parents will own them?
+**Hint 1**: You will need to lift state up to fix these bugs! Think about how you will lift state up. What states will you move? What common parents will own them?
+
+**Hint 2**: Look at the diagrams at the bottom of this file. Which pieces of state are in the wrong place in the component tree?
 
 ### BUG 1
 ```
@@ -73,4 +75,11 @@ Key steps to fix the bug
 Fix the bugs! Implement the plans you wrote above.
 If you realize the plan needs to change, update it.
 Make a separate commit for each bug fix or group of related fixes.
+
+## More information
+Here is an image of the UI divided into components.
+![UI divided into components](./components.png)
+
+This diagram shows the component tree and the state held by each component (if any). This shows the design of the code, which you are going to fix. Some of this state is in the wrong place!
+![component tree with state](./component_tree_with_state.png)
 
