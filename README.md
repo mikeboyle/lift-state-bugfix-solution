@@ -18,6 +18,7 @@ List your team members here
 ## USER STORIES
 You can refer to the [deployed and fixed version of this site](https://lift-state-bugfix.netlify.app/) to see how each of these user stories behaves when they are working correctly.
 1. When I vist the home page, I see a list of menu items and my current order.
+1. There is a loading state while the items are being fetched. (There's no error state -- this is okay for tdoay.)
 1. Each menu item has a name, short description, formatted price, and list of toppings (if the item has toppings)
 1. When I type in the search bar, the list of items is filtered and I only see items whose name contains the text in the search bar.
 1. When I click "Add to Order" the item is added to the order with quantity 1. If it is already in the order, its quantity increments. When I click "Remove", the quantity decreases. When the quantity reaches 0, the item disappears from the order.
