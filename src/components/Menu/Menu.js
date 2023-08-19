@@ -15,10 +15,18 @@ const Menu = ({ handleAddToOrder, items }) => {
     return item.name.toLowerCase().includes(query.toLowerCase());
   });
 
+  const renderContent = () => {
+    if (!filteredItems.length) {
+      return <div className='Menu__no-content'>No items found!</div>
+    }
+
+    return <Items handleAddToOrder={handleAddToOrder} items={filteredItems} />;
+  }
+
   return (
     <div className="Menu">
       <SearchBar value={query} onChange={handleSearchChange} />
-      <Items handleAddToOrder={handleAddToOrder} items={filteredItems} />
+      {renderContent()}
     </div>
   );
 };
