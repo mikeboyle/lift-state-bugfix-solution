@@ -7,3 +7,8 @@
     padding: 1rem;
     background-color: #ebd8c3;
 }
+
+.App--loading {
+    height: 80vh;
+    padding: 1rem;
+}
