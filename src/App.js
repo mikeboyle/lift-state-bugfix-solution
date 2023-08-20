@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 function App() {
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
   const [order, setOrder] = useState({});
 
   const handleAddToOrder = (id) => {
@@ -38,7 +37,6 @@ function App() {
     const json = await res.json();
     const { data } = json;
     setItems(data);
-    setFilteredItems(data);
     setLoading(false);
   };
   useEffect(() => {
@@ -49,14 +47,7 @@ function App() {
     if (loading) {
       return <div className="App--loading">Loading...</div>;
     }
-    return (
-      <Menu
-        filteredItems={filteredItems}
-        items={items}
-        setFilteredItems={setFilteredItems}
-        handleAddToOrder={handleAddToOrder}
-      />
-    );
+    return <Menu items={items} handleAddToOrder={handleAddToOrder} />;
   };
 
   return (
