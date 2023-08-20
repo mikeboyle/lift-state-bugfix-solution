@@ -1,13 +1,7 @@
 import Item from '../Item/Item';
-import { addToOrder } from '../../helpers/orderHelpers';
 import './Items.css';
 
-const Items = ({ items, order, setOrder }) => {
-  const handleAddToOrder = (id) => {
-    const updatedOrder = addToOrder(order, id);
-    setOrder(updatedOrder);
-  };
-
+const Items = ({ handleAddToOrder, items }) => {
   return (
     <article className="Items">
       {items.map((item) => {

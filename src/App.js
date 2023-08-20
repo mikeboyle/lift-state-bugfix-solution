@@ -1,8 +1,7 @@
 import Grid from './components/Grid/Grid';
 import Menu from './components/Menu/Menu';
 import Order from './components/Order/Order';
-// Uncomment to import these helpers
-// import { addToOrder, removeFromOrder } from './helpers/orderHelpers';
+import { addToOrder, removeFromOrder } from './helpers/orderHelpers';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -11,6 +10,25 @@ function App() {
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
   const [order, setOrder] = useState({});
+
+  const handleAddToOrder = (id) => {
+    const updatedOrder = addToOrder(order, id);
+    setOrder(updatedOrder);
+  };
+
+  const handleRemoveFromOrder = (id) => {
+    const updatedOrder = removeFromOrder(order, id);
+    setOrder(updatedOrder);
+  };
+
+  const orderItems = items
+    .filter((item) => Boolean(order[item.id]))
+    .map((item) => ({
+      id: item.id,
+      name: item.name,
+      price: item.price,
+      quantity: order[item.id],
+    }));
 
   const API_URL = 'https://px32id5fdg.execute-api.us-east-1.amazonaws.com';
 
@@ -35,9 +53,8 @@ function App() {
       <Menu
         filteredItems={filteredItems}
         items={items}
-        order={order}
-        setOrder={setOrder}
         setFilteredItems={setFilteredItems}
+        handleAddToOrder={handleAddToOrder}
       />
     );
   };
@@ -47,7 +64,10 @@ function App() {
       <h1>Our Menu</h1>
       <Grid className="App__menu-grid">
         {renderLoadingOrMenu()}
-        <Order items={items} />
+        <Order
+          handleRemoveFromOrder={handleRemoveFromOrder}
+          orderItems={orderItems}
+        />
       </Grid>
     </div>
   );
